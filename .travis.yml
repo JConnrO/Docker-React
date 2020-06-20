@@ -5,7 +5,7 @@ services:
     - docker
     
 before_install:
-    - docker build -t jconnro/Docker-React -f Dockerfile.dev .
+    - docker build -t JConnrO/Docker-React -f Dockerfile.dev .
 
 script:
      - docker run -e CI=true JConnrO/Docker-React npm run test
