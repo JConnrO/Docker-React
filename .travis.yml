@@ -2,13 +2,13 @@ sudo: required
 language: generic 
 
 services: 
-    - docker
+   - docker
     
 before_install:
-    - docker build -t jconnro/docker-react -f Dockerfile.dev .
+   - docker build -t jconnro/docker-react -f Dockerfile.dev .
 
 script:
-    - docker run -e CI=true jconnro/docker-react npm run test -- --coverage
+   - docker run -e CI=true jconnro/docker-react npm run test -- --coverage
 
 deploy: 
     provider: elasticbeanstalk
@@ -19,6 +19,5 @@ deploy:
     bucket_path: "docker-react"
     on:
         branch: master
-
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
